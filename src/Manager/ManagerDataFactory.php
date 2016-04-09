@@ -26,7 +26,7 @@ class ManagerDataFactory
                 $instance = new MysqlManager();
                 break;
             default:
-                throw new ManagerException('Error when creating a new Manager to handle the data', ExceptionCodes::OPERATION_FAILED);
+                throw new ManagerException('Error when creating a new Manager to handle the data', ExceptionCodes::NOT_FOUND);
         }
         return $instance;
     }
