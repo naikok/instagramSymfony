@@ -1,0 +1,62 @@
+[09-Apr-2016 13:34:47 UTC] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'The directory "/home/ubuntu/workspace/test/var/cache/prod/annotations" is not writable.' in /home/ubuntu/workspace/test/vendor/doctrine/cache/lib/Doctrine/Common/Cache/FileCache.php:92
+Stack trace:
+#0 /home/ubuntu/workspace/test/vendor/doctrine/cache/lib/Doctrine/Common/Cache/FilesystemCache.php(37): Doctrine\Common\Cache\FileCache->__construct('/home/ubuntu/wo...', '.doctrinecache....', 2)
+#1 /home/ubuntu/workspace/test/var/cache/prod/appProdProjectContainer.php(252): Doctrine\Common\Cache\FilesystemCache->__construct('/home/ubuntu/wo...')
+#2 /home/ubuntu/workspace/test/var/bootstrap.php.cache(2107): appProdProjectContainer->getAnnotationReaderService()
+#3 /home/ubuntu/workspace/test/var/cache/prod/appProdProjectContainer.php(1763): Symfony\Component\DependencyInjection\Container->get('annotation_read...')
+#4 /home/ubuntu/workspace/test/var/bootstrap.php.cache(2107): appProdProjectContainer->getSensioFrameworkExtra_Controller_ListenerService()
+#5 /h in /home/ubuntu/workspace/test/vendor/doctrine/cache/lib/Doctrine/Common/Cache/FileCache.php on line 92
+[09-Apr-2016 14:53:03 UTC] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'The directory "/home/ubuntu/workspace/test/var/cache/prod/annotations" is not writable.' in /home/ubuntu/workspace/test/vendor/doctrine/cache/lib/Doctrine/Common/Cache/FileCache.php:92
+Stack trace:
+#0 /home/ubuntu/workspace/test/vendor/doctrine/cache/lib/Doctrine/Common/Cache/FilesystemCache.php(37): Doctrine\Common\Cache\FileCache->__construct('/home/ubuntu/wo...', '.doctrinecache....', 2)
+#1 /home/ubuntu/workspace/test/var/cache/prod/appProdProjectContainer.php(252): Doctrine\Common\Cache\FilesystemCache->__construct('/home/ubuntu/wo...')
+#2 /home/ubuntu/workspace/test/var/bootstrap.php.cache(2107): appProdProjectContainer->getAnnotationReaderService()
+#3 /home/ubuntu/workspace/test/var/cache/prod/appProdProjectContainer.php(1763): Symfony\Component\DependencyInjection\Container->get('annotation_read...')
+#4 /home/ubuntu/workspace/test/var/bootstrap.php.cache(2107): appProdProjectContainer->getSensioFrameworkExtra_Controller_ListenerService()
+#5 /h in /home/ubuntu/workspace/test/vendor/doctrine/cache/lib/Doctrine/Common/Cache/FileCache.php on line 92
+[09-Apr-2016 17:11:04 UTC] PHP Fatal error:  Call to a member function exportData() on a non-object in /home/ubuntu/workspace/test/src/AppBundle/Controller/DefaultController.php on line 32
+[09-Apr-2016 17:11:04 UTC] PHP Stack trace:
+[09-Apr-2016 17:11:04 UTC] PHP   1. {main}() /home/ubuntu/workspace/test/web/app.php:0
+[09-Apr-2016 17:11:04 UTC] PHP   2. Symfony\Component\HttpKernel\Kernel->handle() /home/ubuntu/workspace/test/web/app.php:28
+[09-Apr-2016 17:11:04 UTC] PHP   3. Symfony\Component\HttpKernel\HttpKernel->handle() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2306
+[09-Apr-2016 17:11:04 UTC] PHP   4. Symfony\Component\HttpKernel\HttpKernel->handleRaw() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2955
+[09-Apr-2016 17:11:04 UTC] PHP   5. call_user_func_array:{/home/ubuntu/workspace/test/var/bootstrap.php.cache:2993}() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2993
+[09-Apr-2016 17:11:04 UTC] PHP   6. AppBundle\Controller\DefaultController->exportCsvFileAction() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2993
+[09-Apr-2016 17:14:08 UTC] PHP Fatal error:  Class 'AppBundle\Controller\Response' not found in /home/ubuntu/workspace/test/src/AppBundle/Controller/DefaultController.php on line 32
+[09-Apr-2016 17:14:08 UTC] PHP Stack trace:
+[09-Apr-2016 17:14:08 UTC] PHP   1. {main}() /home/ubuntu/workspace/test/web/app.php:0
+[09-Apr-2016 17:14:08 UTC] PHP   2. Symfony\Component\HttpKernel\Kernel->handle() /home/ubuntu/workspace/test/web/app.php:28
+[09-Apr-2016 17:14:08 UTC] PHP   3. Symfony\Component\HttpKernel\HttpKernel->handle() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2306
+[09-Apr-2016 17:14:08 UTC] PHP   4. Symfony\Component\HttpKernel\HttpKernel->handleRaw() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2955
+[09-Apr-2016 17:14:08 UTC] PHP   5. call_user_func_array:{/home/ubuntu/workspace/test/var/bootstrap.php.cache:2993}() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2993
+[09-Apr-2016 17:14:08 UTC] PHP   6. AppBundle\Controller\DefaultController->exportCsvFileAction() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2993
+[09-Apr-2016 17:20:54 UTC] PHP Warning:  file_get_contents(): Filename cannot be empty in /home/ubuntu/workspace/test/src/Manager/ManagerTypes/CsvManager.php on line 111
+[09-Apr-2016 17:20:54 UTC] PHP Stack trace:
+[09-Apr-2016 17:20:54 UTC] PHP   1. {main}() /home/ubuntu/workspace/test/web/app.php:0
+[09-Apr-2016 17:20:54 UTC] PHP   2. Symfony\Component\HttpKernel\Kernel->handle() /home/ubuntu/workspace/test/web/app.php:28
+[09-Apr-2016 17:20:54 UTC] PHP   3. Symfony\Component\HttpKernel\HttpKernel->handle() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2306
+[09-Apr-2016 17:20:54 UTC] PHP   4. Symfony\Component\HttpKernel\HttpKernel->handleRaw() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2955
+[09-Apr-2016 17:20:54 UTC] PHP   5. call_user_func_array:{/home/ubuntu/workspace/test/var/bootstrap.php.cache:2993}() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2993
+[09-Apr-2016 17:20:54 UTC] PHP   6. AppBundle\Controller\DefaultController->exportCsvFileAction() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2993
+[09-Apr-2016 17:20:54 UTC] PHP   7. Manager\ManagerTypes\CsvManager->exportData() /home/ubuntu/workspace/test/src/AppBundle/Controller/DefaultController.php:32
+[09-Apr-2016 17:20:54 UTC] PHP   8. file_get_contents() /home/ubuntu/workspace/test/src/Manager/ManagerTypes/CsvManager.php:111
+[09-Apr-2016 17:21:17 UTC] PHP Warning:  file_get_contents(): Filename cannot be empty in /home/ubuntu/workspace/test/src/Manager/ManagerTypes/CsvManager.php on line 111
+[09-Apr-2016 17:21:17 UTC] PHP Stack trace:
+[09-Apr-2016 17:21:17 UTC] PHP   1. {main}() /home/ubuntu/workspace/test/web/app.php:0
+[09-Apr-2016 17:21:17 UTC] PHP   2. Symfony\Component\HttpKernel\Kernel->handle() /home/ubuntu/workspace/test/web/app.php:28
+[09-Apr-2016 17:21:17 UTC] PHP   3. Symfony\Component\HttpKernel\HttpKernel->handle() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2306
+[09-Apr-2016 17:21:17 UTC] PHP   4. Symfony\Component\HttpKernel\HttpKernel->handleRaw() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2955
+[09-Apr-2016 17:21:17 UTC] PHP   5. call_user_func_array:{/home/ubuntu/workspace/test/var/bootstrap.php.cache:2993}() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2993
+[09-Apr-2016 17:21:17 UTC] PHP   6. AppBundle\Controller\DefaultController->exportCsvFileAction() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2993
+[09-Apr-2016 17:21:17 UTC] PHP   7. Manager\ManagerTypes\CsvManager->exportData() /home/ubuntu/workspace/test/src/AppBundle/Controller/DefaultController.php:32
+[09-Apr-2016 17:21:17 UTC] PHP   8. file_get_contents() /home/ubuntu/workspace/test/src/Manager/ManagerTypes/CsvManager.php:111
+[09-Apr-2016 17:21:23 UTC] PHP Warning:  file_get_contents(): Filename cannot be empty in /home/ubuntu/workspace/test/src/Manager/ManagerTypes/CsvManager.php on line 111
+[09-Apr-2016 17:21:23 UTC] PHP Stack trace:
+[09-Apr-2016 17:21:23 UTC] PHP   1. {main}() /home/ubuntu/workspace/test/web/app.php:0
+[09-Apr-2016 17:21:23 UTC] PHP   2. Symfony\Component\HttpKernel\Kernel->handle() /home/ubuntu/workspace/test/web/app.php:28
+[09-Apr-2016 17:21:23 UTC] PHP   3. Symfony\Component\HttpKernel\HttpKernel->handle() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2306
+[09-Apr-2016 17:21:23 UTC] PHP   4. Symfony\Component\HttpKernel\HttpKernel->handleRaw() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2955
+[09-Apr-2016 17:21:23 UTC] PHP   5. call_user_func_array:{/home/ubuntu/workspace/test/var/bootstrap.php.cache:2993}() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2993
+[09-Apr-2016 17:21:23 UTC] PHP   6. AppBundle\Controller\DefaultController->exportCsvFileAction() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2993
+[09-Apr-2016 17:21:23 UTC] PHP   7. Manager\ManagerTypes\CsvManager->exportData() /home/ubuntu/workspace/test/src/AppBundle/Controller/DefaultController.php:32
+[09-Apr-2016 17:21:23 UTC] PHP   8. file_get_contents() /home/ubuntu/workspace/test/src/Manager/ManagerTypes/CsvManager.php:111
