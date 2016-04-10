@@ -31,12 +31,18 @@ class CsvManagerTest extends \PHPUnit_Framework_TestCase
     
     /**
      * @expectedException Exception
+     * @covers saveData
      */
      
     public function testSaveDataFail()
     {
         $data = [];
-        $result = $this->csvManager->saveData($data);
+        try {
+            $result = $this->csvManager->saveData($data);
+        }catch(Exception $e) {
+            $this->assertEquals($e->getMessage(), "Data not provided to be saved into the csv file");
+            return;
+        }
     }
     
     public function testLastIdInserted()
@@ -46,8 +52,18 @@ class CsvManagerTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue($this->csvManager->getLastIdInserted() > 1 );
     }
     
-    public function exportData(){
-        $this->csvManager->exportData();
+    public function testExportData()
+    {
+        $response = $this->csvManager->exportData();
+        $fileLength = strlen($response->getContent());
+        $this->assertTrue($fileLength > 0);
     }
-
+    
+    public function testReadData()
+    {
+        $result = $this->csvManager->readData();
+        $countItems = count($result);
+        $this->assertNotEmpty($result);
+        $this->assertTrue($countItems > 0);
+    }
 }

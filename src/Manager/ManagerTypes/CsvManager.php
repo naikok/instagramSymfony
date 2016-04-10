@@ -1,5 +1,4 @@
 <?php
-
 namespace Manager\ManagerTypes;
 
 use \Manager\ManagerDataInterface;
@@ -18,11 +17,13 @@ class CsvManager implements ManagerDataInterface {
     private static $instance;
     public $columns = '';
     public $filepath = '';
+    public $filename = '';
 
     private function __construct()
     {
         $this->columns = ['id', 'title', 'createdAt', 'imageName'];
-        $this->filepath = __DIR__."/csv/demo.csv";
+        $this->filename = 'demo.csv';
+        $this->filepath = __DIR__ . '/csv/' . $this->filename;
     }
 
     public static function getInstance() {
@@ -30,6 +31,11 @@ class CsvManager implements ManagerDataInterface {
          self::$instance = new self;
       }
       return self::$instance;
+    }
+    
+    public function getClass()
+    {
+        return get_called_class();
     }
    
     public function initCsv() 
@@ -90,22 +96,28 @@ class CsvManager implements ManagerDataInterface {
    }
    
  
-   public function readData() {       
+    public function readData() 
+    {       
         $results = [];
-        $file = fopen($this->filepath, 'r');
-        while (($line = fgetcsv($file)) !== FALSE) {
-            //$line is an array of the csv elements
-            $results[] = $line;
+        if (!file_exists($this->filepath)) 
+            throw new ManagerException('File csv could not be found under' . $this->filepath, ExceptionCodes::NOT_FOUND);
+        try {
+            $file = fopen($this->filepath, 'r');
+            while (($line = fgetcsv($file)) !== FALSE) {
+                $results[] = $line;
+            }
+            fclose($file);
+            return array_reverse($results); //it returns the result order by date desc
+        } catch (Exception $e) {
+            throw new ManagerException('Csv file could not be read as expected', ExceptionCodes::OPERATION_FAILED);
         }
-        fclose($file);
-        return array_reverse($results);  
-   }     
+    }     
    
     public function exportData()
     { 
         $response = new Response();
         $response->headers->set('Content-type', 'application/octect-stream');
-        $response->headers->set('Content-Disposition', sprintf('attachment; filename="%s"', "demo.csv"));
+        $response->headers->set('Content-Disposition', sprintf('attachment; filename="%s"', $this->filename));
         $response->headers->set('Content-Length', filesize($this->filepath));
         $response->headers->set('Content-Transfer-Encoding', 'binary');
         $response->setContent(file_get_contents($this->filepath));
