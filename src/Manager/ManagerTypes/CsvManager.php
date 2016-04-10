@@ -41,9 +41,12 @@ class CsvManager implements ManagerDataInterface {
     public function initCsv() 
     {    
        try {
+           
+           
             $file = fopen($this->filepath, 'w');
             fputcsv($file, $this->columns); // save the columns headers
             fclose($file);
+            @chmod($this->filepath, 0777);
             return file_get_contents($file);
         } catch (Exception $e) {
             throw new ManagerException("Error when creating the  csv file", ExceptionCode::NOT_FOUND);
@@ -81,11 +84,15 @@ class CsvManager implements ManagerDataInterface {
         $dataList = [$data];
         try {
             if (!empty($dataList) && is_array($dataList)) {
-                $file = fopen($this->filepath, 'a');
-                foreach ($dataList as $field) {          
-                    fputcsv($file, $field);   
-                }  
-                fclose($file);
+                try{
+                    $file = fopen($this->filepath, 'a');
+                    foreach ($dataList as $field) {          
+                        fputcsv($file, $field);   
+                    }  
+                    fclose($file);
+                }catch (Exception $e) {
+                    throw new ManagerException('Operation Failed when saving data', ExceptionCodes::OPERATION_FAILED);
+                }
                 return $data;
             } else {
                 throw new ManagerException('Data not provided to be saved into the csv file', ExceptionCodes::BAD_REQUEST);
@@ -107,7 +114,7 @@ class CsvManager implements ManagerDataInterface {
                 $results[] = $line;
             }
             fclose($file);
-            return array_reverse($results); //it returns the result order by date desc
+            return array_reverse($results); //order by date desc
         } catch (Exception $e) {
             throw new ManagerException('Csv file could not be read as expected', ExceptionCodes::OPERATION_FAILED);
         }

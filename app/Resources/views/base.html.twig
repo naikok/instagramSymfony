@@ -4,9 +4,10 @@
         <meta charset="UTF-8" />
         <title>{% block title %}Welcome hola!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
-    <body>
+    <body onload="getPosts();">
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
     </body>

@@ -2,41 +2,44 @@
 
 {% block body %}
     <div id="wrapper">
+        
         <div id="container">
-           
+           <header class="_5axto" align="center">
+              <img src="https://instagram-robotm82.c9users.io/test/web/images/instagramlogo.png"/>
+           </header>
+           <header class="_5axto" align="right">
+              <a href="https://instagram-robotm82.c9users.io/test/web/exportCsvFile">Export as CSV file</a>
+           </header>
 
             <div id="status">
                 <header class="_5axto">
+                    <form name="formPostImage" id="formPostImage">
                      <div class="inputBtnSection">
                         <input id="uploadFile" class="disableInputField" placeholder="Choose your image" disabled="disabled" />
                         <label class="fileUpload">
-                            <input id="uploadBtn" type="file" class="upload" />
-                            <span class="uploadBtn">Upload Image</span>
+                            <input type="file" name=""photo id="photo" size="25" />  
                         </label>
                         <br/>
-                        <input type="text" placeholder="Write a title for your image" class="inputText"/>
+                        <input type="text" placeholder="Write a title for your image" id ="title-photo" class="inputText"/>
                         
                        <div style="display:inline-block; font-family:verdana; font-size:0; vertical-align:top;">
-                        <input type="button" class="btn-style" value="Send" />
+                            <input type="button" class="btn-style" value="Send" onclick="javascript:submitform();" />
                         </div>
+                    </form>
                     </div>
                 </header>
-
             </div>
-
-            <div id="next">
-                
-                
-                    <div class="_22yr2 _e0mru" >
-                    <div style="padding-bottom: 100%; border:1px solid#000000" class="_jjzlb" >
+           <div class="automatic">
+            <!--example
+            <div id="next" class="leopard">
+                <div class="_22yr2 _e0mru" >
+                    <div class="_jjzlb" align="center" >
                          <img alt="❗️❗️❗️❗️❗️❗️❗️❗️❗️❗️❗️❗️❗️💜💜💜💜💜💜💜💜💜💜💜💜💜 Девочки СЕГОДНЯ есть время на маникюр💅🏻педикюр👣: 16.00,17.00,18.00,19.00,20.00,21.00 Ресницы👸🏼: 18.00,19.00,20.00 запись👉🏼📲+79687999795 👉🏻📩 Whats App⤵️on-line запись 💜💜💜💜💜💜💜💜💜💜💜💜💜 ❗️❗️❗️❗️❗️❗️❗️❗️❗️❗️❗️❗️❗️" class="_icyx7" id="pImage_0" src="https://scontent-mad1-1.cdninstagram.com/t51.2885-15/e35/12964992_579517235540224_1982909731_n.jpg?ig_cache_key=MTIyNDU4MzQ2OTU3MTc5ODEwMg%3D%3D.2" data-reactid=".0.1.0.1.0.$1224583469571798102.$https=2//scontent-mad1-1=1cdninstagram=1com/t51=12885-15/e35/12964992_579517235540224_1982909731_n=1jpg?ig_cache_key=0MTIyNDU4MzQ2OTU3MTc5ODEwMg%3D%3D=12.0.0.$pImage_0"/>
                     </div>
-                  
-                   
-               
+                </div>
+            </div> -->
             </div>
-
-        </div>
+           
     </div>
 {% endblock %}
 
@@ -57,12 +60,12 @@
     .btn-style
     {
     	border : solid 1px #e6e6e6;
-    	border-radius : 3px;
+    	border-radius : 2px;
     	moz-border-radius : 3px;
     	-webkit-box-shadow : 0px 0px 2px rgba(0,0,0,1.0);
     	-moz-box-shadow : 0px 0px 2px rgba(0,0,0,1.0);
     	box-shadow : 0px 0px 2px rgba(0,0,0,1.0);
-    	font-size : 20px;
+    	font-size : 16px;
     	color : #696869;
     	padding : 1px 17px;
     	background : #ffffff;
@@ -133,7 +136,8 @@
     ._5axto {-webkit-box-direction:normal; -webkit-box-orient:horizontal; flex-direction:row;}
     ._e0mru { box-shadow:#EDEEEE 0 0 20px 0 inset;}
     ._22yr2 {background-color:#EDEEEE; display:block; width:100%;}
-    ._jjzlb {display:block; overflow:hidden; padding-bottom:100%;}
+    ._jjzlb {display:block; overflow:hidden;}
+    .titleImage{clear:both; width:auto; height:35px; font-size:15px; font-weight:700px; padding-top:5px; font-style:oblique; text-align:center}
     a:hover { text-decoration: none; }
     code { background: #F5F5F5; max-width: 100px; padding: 2px 6px; word-wrap: break-word; }
     #wrapper { background: #FFF; margin: 1em auto; max-width: 800px; width: 95%; }
@@ -155,11 +159,98 @@
 </style>
 {% endblock %}
 {% block javascripts %}
-<script>
-    document.getElementById("uploadBtn").onchange = function () {
-        document.getElementById("uploadFile").value = this.value;
+<script type="text/javascript">
+    function submitform() 
+    {
+          Uploader.uploadFile('photo');
     }
+    
+    function resetForm() 
+    {
+        jQuery("#formPostImage")[0].reset();
+    }
+   
+    function getPosts()
+    {
+        jQuery.ajax({
+            url: document.location.href + 'readData',
+            type: 'post',
+            success: function(response) { 
+                var resultPosts = response.message;
+                jQuery(".automatic").empty();
+                jQuery.each(resultPosts,function (key, value) {
+                    var imageName = value[3];
+                    var imgSrc=document.location.href + 'images/' + imageName ;
+                    if (value[0] != 'id' ) {
+                        var item='<div id="next" style="padding-top:20px;margin-bottom:20px"><div class="_22yr2 _e0mru" ><div class="titleImage" align="center">'+value[1]+'</div><div class="_jjzlb" align="center"><img src="'+ imgSrc +'"/></div></div></div>';
+                            jQuery(".automatic").append(item);
+                    }
+                });
+        },
+        error: function(){
+            console.log('error reading csv file');
+        }
+        });
+    }
+
+
+class Uploader {
+
+    static uploadFile (id) {
+        var title = document.getElementById('title-photo').value;
+        console.log(title);
+        var file = document.getElementById(id).files[0];
+        
+        if (file) {
+            var fileSize = 0;
+            if (file.size > 1024 * 1024) {
+                fileSize = (Math.round(file.size * 100 / (1024 * 1024)) / 100).toString() + 'MB';
+            } else {
+                fileSize = (Math.round(file.size * 100 / 1024) / 100).toString() + 'KB';
+            }
+            console.log('Name: ' + file.name);
+            var extension = file.name.split('.').pop();
+            console.log("extension");
+            console.log(extension);
+            console.log('Size: ' + fileSize);
+            console.log('Type: ' + file.type);
+        }
+        var data = new FormData();
+        data.append(id, file);
+        data.append('title-photo', title);   
+        if (this.isValidExtension(extension)) {
+            console.log("is valid Extension");
+            var url = document.location.href + 'uploadFile';
+            console.log(url);
+            $.ajax({
+                    url: url,
+                    type: "POST",
+                    data: data,
+                    processData: false,
+                    contentType: false,
+                    success: function(response) {
+                        if (response.success == 1) {
+                            resetForm();
+                            getPosts();
+                        } else {
+                            alert (response.message);
+                        }
+                    }, 
+                    error:function(){
+                        alert("error");
+                    }
+            });
+        } else {
+            alert("Extension not valid");
+        }
+    }
+
+    static isValidExtension(value) {
+        let validExtensions = ["png", "jpg", "jpeg", "gif"];
+        return validExtensions.indexOf(value) > - 1;
+    }
+}
+
+    
 </script>
-
-
 {% endblock %}

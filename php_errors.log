@@ -60,3 +60,288 @@ Stack trace:
 [09-Apr-2016 17:21:23 UTC] PHP   6. AppBundle\Controller\DefaultController->exportCsvFileAction() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2993
 [09-Apr-2016 17:21:23 UTC] PHP   7. Manager\ManagerTypes\CsvManager->exportData() /home/ubuntu/workspace/test/src/AppBundle/Controller/DefaultController.php:32
 [09-Apr-2016 17:21:23 UTC] PHP   8. file_get_contents() /home/ubuntu/workspace/test/src/Manager/ManagerTypes/CsvManager.php:111
+[10-Apr-2016 10:52:27 UTC] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'The directory "/home/ubuntu/workspace/test/var/cache/prod/annotations" is not writable.' in /home/ubuntu/workspace/test/vendor/doctrine/cache/lib/Doctrine/Common/Cache/FileCache.php:92
+Stack trace:
+#0 /home/ubuntu/workspace/test/vendor/doctrine/cache/lib/Doctrine/Common/Cache/FilesystemCache.php(37): Doctrine\Common\Cache\FileCache->__construct('/home/ubuntu/wo...', '.doctrinecache....', 2)
+#1 /home/ubuntu/workspace/test/var/cache/prod/appProdProjectContainer.php(252): Doctrine\Common\Cache\FilesystemCache->__construct('/home/ubuntu/wo...')
+#2 /home/ubuntu/workspace/test/var/bootstrap.php.cache(2107): appProdProjectContainer->getAnnotationReaderService()
+#3 /home/ubuntu/workspace/test/var/cache/prod/appProdProjectContainer.php(1763): Symfony\Component\DependencyInjection\Container->get('annotation_read...')
+#4 /home/ubuntu/workspace/test/var/bootstrap.php.cache(2107): appProdProjectContainer->getSensioFrameworkExtra_Controller_ListenerService()
+#5 /h in /home/ubuntu/workspace/test/vendor/doctrine/cache/lib/Doctrine/Common/Cache/FileCache.php on line 92
+[10-Apr-2016 11:46:16 UTC] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'The directory "/home/ubuntu/workspace/test/var/cache/prod/annotations" is not writable.' in /home/ubuntu/workspace/test/vendor/doctrine/cache/lib/Doctrine/Common/Cache/FileCache.php:92
+Stack trace:
+#0 /home/ubuntu/workspace/test/vendor/doctrine/cache/lib/Doctrine/Common/Cache/FilesystemCache.php(37): Doctrine\Common\Cache\FileCache->__construct('/home/ubuntu/wo...', '.doctrinecache....', 2)
+#1 /home/ubuntu/workspace/test/var/cache/prod/appProdProjectContainer.php(252): Doctrine\Common\Cache\FilesystemCache->__construct('/home/ubuntu/wo...')
+#2 /home/ubuntu/workspace/test/var/bootstrap.php.cache(2107): appProdProjectContainer->getAnnotationReaderService()
+#3 /home/ubuntu/workspace/test/var/cache/prod/appProdProjectContainer.php(1763): Symfony\Component\DependencyInjection\Container->get('annotation_read...')
+#4 /home/ubuntu/workspace/test/var/bootstrap.php.cache(2107): appProdProjectContainer->getSensioFrameworkExtra_Controller_ListenerService()
+#5 /h in /home/ubuntu/workspace/test/vendor/doctrine/cache/lib/Doctrine/Common/Cache/FileCache.php on line 92
+[10-Apr-2016 13:12:09 UTC] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC), expecting ',' or ';' in /home/ubuntu/workspace/test/src/AppBundle/Service/ManagerService.php on line 10
+[10-Apr-2016 13:12:09 UTC] PHP Stack trace:
+[10-Apr-2016 13:12:09 UTC] PHP   1. {main}() /home/ubuntu/workspace/test/web/app.php:0
+[10-Apr-2016 13:12:09 UTC] PHP   2. Symfony\Component\HttpKernel\Kernel->handle() /home/ubuntu/workspace/test/web/app.php:28
+[10-Apr-2016 13:12:09 UTC] PHP   3. Symfony\Component\HttpKernel\HttpKernel->handle() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2306
+[10-Apr-2016 13:12:09 UTC] PHP   4. Symfony\Component\HttpKernel\HttpKernel->handleRaw() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2955
+[10-Apr-2016 13:12:09 UTC] PHP   5. call_user_func_array:{/home/ubuntu/workspace/test/var/bootstrap.php.cache:2993}() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2993
+[10-Apr-2016 13:12:09 UTC] PHP   6. AppBundle\Controller\DefaultController->uploadFileAction() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2993
+[10-Apr-2016 13:12:09 UTC] PHP   7. spl_autoload_call() /home/ubuntu/workspace/test/var/bootstrap.php.cache:51
+[10-Apr-2016 13:12:09 UTC] PHP   8. Composer\Autoload\ClassLoader->loadClass() /home/ubuntu/workspace/test/var/bootstrap.php.cache:51
+[10-Apr-2016 13:12:09 UTC] PHP   9. Composer\Autoload\includeFile() /home/ubuntu/workspace/test/vendor/composer/ClassLoader.php:301
+[10-Apr-2016 13:12:46 UTC] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC), expecting ',' or ';' in /home/ubuntu/workspace/test/src/AppBundle/Service/ManagerService.php on line 10
+[10-Apr-2016 13:12:46 UTC] PHP Stack trace:
+[10-Apr-2016 13:12:46 UTC] PHP   1. {main}() /home/ubuntu/workspace/test/web/app.php:0
+[10-Apr-2016 13:12:46 UTC] PHP   2. Symfony\Component\HttpKernel\Kernel->handle() /home/ubuntu/workspace/test/web/app.php:28
+[10-Apr-2016 13:12:46 UTC] PHP   3. Symfony\Component\HttpKernel\HttpKernel->handle() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2306
+[10-Apr-2016 13:12:46 UTC] PHP   4. Symfony\Component\HttpKernel\HttpKernel->handleRaw() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2955
+[10-Apr-2016 13:12:46 UTC] PHP   5. call_user_func_array:{/home/ubuntu/workspace/test/var/bootstrap.php.cache:2993}() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2993
+[10-Apr-2016 13:12:46 UTC] PHP   6. AppBundle\Controller\DefaultController->uploadFileAction() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2993
+[10-Apr-2016 13:12:46 UTC] PHP   7. spl_autoload_call() /home/ubuntu/workspace/test/var/bootstrap.php.cache:51
+[10-Apr-2016 13:12:46 UTC] PHP   8. Composer\Autoload\ClassLoader->loadClass() /home/ubuntu/workspace/test/var/bootstrap.php.cache:51
+[10-Apr-2016 13:12:46 UTC] PHP   9. Composer\Autoload\includeFile() /home/ubuntu/workspace/test/vendor/composer/ClassLoader.php:301
+[10-Apr-2016 13:15:13 UTC] PHP Warning:  getimagesize(): Filename cannot be empty in /home/ubuntu/workspace/test/src/AppBundle/Service/ManagerService.php on line 43
+[10-Apr-2016 13:15:13 UTC] PHP Stack trace:
+[10-Apr-2016 13:15:13 UTC] PHP   1. {main}() /home/ubuntu/workspace/test/web/app.php:0
+[10-Apr-2016 13:15:13 UTC] PHP   2. Symfony\Component\HttpKernel\Kernel->handle() /home/ubuntu/workspace/test/web/app.php:28
+[10-Apr-2016 13:15:13 UTC] PHP   3. Symfony\Component\HttpKernel\HttpKernel->handle() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2306
+[10-Apr-2016 13:15:13 UTC] PHP   4. Symfony\Component\HttpKernel\HttpKernel->handleRaw() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2955
+[10-Apr-2016 13:15:13 UTC] PHP   5. call_user_func_array:{/home/ubuntu/workspace/test/var/bootstrap.php.cache:2993}() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2993
+[10-Apr-2016 13:15:13 UTC] PHP   6. AppBundle\Controller\DefaultController->uploadFileAction() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2993
+[10-Apr-2016 13:15:13 UTC] PHP   7. AppBundle\Service\ManagerService->save() /home/ubuntu/workspace/test/src/AppBundle/Controller/DefaultController.php:53
+[10-Apr-2016 13:15:13 UTC] PHP   8. getimagesize() /home/ubuntu/workspace/test/src/AppBundle/Service/ManagerService.php:43
+[10-Apr-2016 14:21:39 UTC] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'The directory "/home/ubuntu/workspace/test/var/cache/prod/annotations" is not writable.' in /home/ubuntu/workspace/test/vendor/doctrine/cache/lib/Doctrine/Common/Cache/FileCache.php:92
+Stack trace:
+#0 /home/ubuntu/workspace/test/vendor/doctrine/cache/lib/Doctrine/Common/Cache/FilesystemCache.php(37): Doctrine\Common\Cache\FileCache->__construct('/home/ubuntu/wo...', '.doctrinecache....', 2)
+#1 /home/ubuntu/workspace/test/var/cache/prod/appProdProjectContainer.php(252): Doctrine\Common\Cache\FilesystemCache->__construct('/home/ubuntu/wo...')
+#2 /home/ubuntu/workspace/test/var/bootstrap.php.cache(2107): appProdProjectContainer->getAnnotationReaderService()
+#3 /home/ubuntu/workspace/test/var/cache/prod/appProdProjectContainer.php(1763): Symfony\Component\DependencyInjection\Container->get('annotation_read...')
+#4 /home/ubuntu/workspace/test/var/bootstrap.php.cache(2107): appProdProjectContainer->getSensioFrameworkExtra_Controller_ListenerService()
+#5 /h in /home/ubuntu/workspace/test/vendor/doctrine/cache/lib/Doctrine/Common/Cache/FileCache.php on line 92
+[10-Apr-2016 14:27:58 UTC] PHP Parse error:  syntax error, unexpected 'unset' (T_UNSET) in /home/ubuntu/workspace/test/src/Manager/ManagerTypes/CsvManager.php on line 111
+[10-Apr-2016 14:27:58 UTC] PHP Stack trace:
+[10-Apr-2016 14:27:58 UTC] PHP   1. {main}() /home/ubuntu/workspace/test/web/app.php:0
+[10-Apr-2016 14:27:58 UTC] PHP   2. Symfony\Component\HttpKernel\Kernel->handle() /home/ubuntu/workspace/test/web/app.php:28
+[10-Apr-2016 14:27:58 UTC] PHP   3. Symfony\Component\HttpKernel\HttpKernel->handle() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2306
+[10-Apr-2016 14:27:58 UTC] PHP   4. Symfony\Component\HttpKernel\HttpKernel->handleRaw() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2955
+[10-Apr-2016 14:27:58 UTC] PHP   5. call_user_func_array:{/home/ubuntu/workspace/test/var/bootstrap.php.cache:2993}() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2993
+[10-Apr-2016 14:27:58 UTC] PHP   6. AppBundle\Controller\DefaultController->uploadFileAction() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2993
+[10-Apr-2016 14:27:58 UTC] PHP   7. AppBundle\Service\ManagerService->__construct() /home/ubuntu/workspace/test/src/AppBundle/Controller/DefaultController.php:62
+[10-Apr-2016 14:27:58 UTC] PHP   8. Manager\ManagerDataFactory::getType() /home/ubuntu/workspace/test/src/AppBundle/Service/ManagerService.php:19
+[10-Apr-2016 14:27:58 UTC] PHP   9. spl_autoload_call() /home/ubuntu/workspace/test/src/AppBundle/Service/ManagerService.php:25
+[10-Apr-2016 14:27:58 UTC] PHP  10. Composer\Autoload\ClassLoader->loadClass() /home/ubuntu/workspace/test/src/AppBundle/Service/ManagerService.php:25
+[10-Apr-2016 14:27:58 UTC] PHP  11. Composer\Autoload\includeFile() /home/ubuntu/workspace/test/vendor/composer/ClassLoader.php:301
+[10-Apr-2016 15:03:28 UTC] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'The directory "/home/ubuntu/workspace/test/var/cache/prod/annotations" is not writable.' in /home/ubuntu/workspace/test/vendor/doctrine/cache/lib/Doctrine/Common/Cache/FileCache.php:92
+Stack trace:
+#0 /home/ubuntu/workspace/test/vendor/doctrine/cache/lib/Doctrine/Common/Cache/FilesystemCache.php(37): Doctrine\Common\Cache\FileCache->__construct('/home/ubuntu/wo...', '.doctrinecache....', 2)
+#1 /home/ubuntu/workspace/test/var/cache/prod/appProdProjectContainer.php(252): Doctrine\Common\Cache\FilesystemCache->__construct('/home/ubuntu/wo...')
+#2 /home/ubuntu/workspace/test/var/bootstrap.php.cache(2107): appProdProjectContainer->getAnnotationReaderService()
+#3 /home/ubuntu/workspace/test/var/cache/prod/appProdProjectContainer.php(1763): Symfony\Component\DependencyInjection\Container->get('annotation_read...')
+#4 /home/ubuntu/workspace/test/var/bootstrap.php.cache(2107): appProdProjectContainer->getSensioFrameworkExtra_Controller_ListenerService()
+#5 /h in /home/ubuntu/workspace/test/vendor/doctrine/cache/lib/Doctrine/Common/Cache/FileCache.php on line 92
+[10-Apr-2016 16:11:08 UTC] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'The directory "/home/ubuntu/workspace/test/var/cache/prod/annotations" is not writable.' in /home/ubuntu/workspace/test/vendor/doctrine/cache/lib/Doctrine/Common/Cache/FileCache.php:92
+Stack trace:
+#0 /home/ubuntu/workspace/test/vendor/doctrine/cache/lib/Doctrine/Common/Cache/FilesystemCache.php(37): Doctrine\Common\Cache\FileCache->__construct('/home/ubuntu/wo...', '.doctrinecache....', 2)
+#1 /home/ubuntu/workspace/test/var/cache/prod/appProdProjectContainer.php(252): Doctrine\Common\Cache\FilesystemCache->__construct('/home/ubuntu/wo...')
+#2 /home/ubuntu/workspace/test/var/bootstrap.php.cache(2107): appProdProjectContainer->getAnnotationReaderService()
+#3 /home/ubuntu/workspace/test/var/cache/prod/appProdProjectContainer.php(1763): Symfony\Component\DependencyInjection\Container->get('annotation_read...')
+#4 /home/ubuntu/workspace/test/var/bootstrap.php.cache(2107): appProdProjectContainer->getSensioFrameworkExtra_Controller_ListenerService()
+#5 /h in /home/ubuntu/workspace/test/vendor/doctrine/cache/lib/Doctrine/Common/Cache/FileCache.php on line 92
+[10-Apr-2016 16:19:40 UTC] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'The directory "/home/ubuntu/workspace/test/var/cache/prod/annotations" is not writable.' in /home/ubuntu/workspace/test/vendor/doctrine/cache/lib/Doctrine/Common/Cache/FileCache.php:92
+Stack trace:
+#0 /home/ubuntu/workspace/test/vendor/doctrine/cache/lib/Doctrine/Common/Cache/FilesystemCache.php(37): Doctrine\Common\Cache\FileCache->__construct('/home/ubuntu/wo...', '.doctrinecache....', 2)
+#1 /home/ubuntu/workspace/test/var/cache/prod/appProdProjectContainer.php(252): Doctrine\Common\Cache\FilesystemCache->__construct('/home/ubuntu/wo...')
+#2 /home/ubuntu/workspace/test/var/bootstrap.php.cache(2107): appProdProjectContainer->getAnnotationReaderService()
+#3 /home/ubuntu/workspace/test/var/cache/prod/appProdProjectContainer.php(1763): Symfony\Component\DependencyInjection\Container->get('annotation_read...')
+#4 /home/ubuntu/workspace/test/var/bootstrap.php.cache(2107): appProdProjectContainer->getSensioFrameworkExtra_Controller_ListenerService()
+#5 /h in /home/ubuntu/workspace/test/vendor/doctrine/cache/lib/Doctrine/Common/Cache/FileCache.php on line 92
+[10-Apr-2016 17:24:24 UTC] PHP Warning:  hash_file(): Filename cannot be empty in /home/ubuntu/workspace/test/src/AppBundle/Controller/DefaultController.php on line 59
+[10-Apr-2016 17:24:24 UTC] PHP Stack trace:
+[10-Apr-2016 17:24:24 UTC] PHP   1. {main}() /home/ubuntu/workspace/test/web/app.php:0
+[10-Apr-2016 17:24:24 UTC] PHP   2. Symfony\Component\HttpKernel\Kernel->handle() /home/ubuntu/workspace/test/web/app.php:28
+[10-Apr-2016 17:24:24 UTC] PHP   3. Symfony\Component\HttpKernel\HttpKernel->handle() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2306
+[10-Apr-2016 17:24:24 UTC] PHP   4. Symfony\Component\HttpKernel\HttpKernel->handleRaw() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2955
+[10-Apr-2016 17:24:24 UTC] PHP   5. call_user_func_array:{/home/ubuntu/workspace/test/var/bootstrap.php.cache:2993}() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2993
+[10-Apr-2016 17:24:24 UTC] PHP   6. AppBundle\Controller\DefaultController->uploadFileAction() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2993
+[10-Apr-2016 17:24:24 UTC] PHP   7. hash_file() /home/ubuntu/workspace/test/src/AppBundle/Controller/DefaultController.php:59
+[10-Apr-2016 18:34:14 UTC] PHP Warning:  fopen(/home/ubuntu/workspace/test/src/Manager/ManagerTypes/csv/demo.csv): failed to open stream: Permission denied in /home/ubuntu/workspace/test/src/Manager/ManagerTypes/CsvManager.php on line 84
+[10-Apr-2016 18:34:14 UTC] PHP Stack trace:
+[10-Apr-2016 18:34:14 UTC] PHP   1. {main}() /home/ubuntu/workspace/test/web/app.php:0
+[10-Apr-2016 18:34:14 UTC] PHP   2. Symfony\Component\HttpKernel\Kernel->handle() /home/ubuntu/workspace/test/web/app.php:28
+[10-Apr-2016 18:34:14 UTC] PHP   3. Symfony\Component\HttpKernel\HttpKernel->handle() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2306
+[10-Apr-2016 18:34:14 UTC] PHP   4. Symfony\Component\HttpKernel\HttpKernel->handleRaw() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2955
+[10-Apr-2016 18:34:14 UTC] PHP   5. call_user_func_array:{/home/ubuntu/workspace/test/var/bootstrap.php.cache:2993}() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2993
+[10-Apr-2016 18:34:14 UTC] PHP   6. AppBundle\Controller\DefaultController->uploadFileAction() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2993
+[10-Apr-2016 18:34:14 UTC] PHP   7. AppBundle\Service\ManagerService->save() /home/ubuntu/workspace/test/src/AppBundle/Controller/DefaultController.php:63
+[10-Apr-2016 18:34:14 UTC] PHP   8. Manager\ManagerTypes\CsvManager->saveData() /home/ubuntu/workspace/test/src/AppBundle/Service/ManagerService.php:54
+[10-Apr-2016 18:34:14 UTC] PHP   9. fopen() /home/ubuntu/workspace/test/src/Manager/ManagerTypes/CsvManager.php:84
+[10-Apr-2016 18:34:14 UTC] PHP Warning:  fputcsv() expects parameter 1 to be resource, boolean given in /home/ubuntu/workspace/test/src/Manager/ManagerTypes/CsvManager.php on line 86
+[10-Apr-2016 18:34:14 UTC] PHP Stack trace:
+[10-Apr-2016 18:34:14 UTC] PHP   1. {main}() /home/ubuntu/workspace/test/web/app.php:0
+[10-Apr-2016 18:34:14 UTC] PHP   2. Symfony\Component\HttpKernel\Kernel->handle() /home/ubuntu/workspace/test/web/app.php:28
+[10-Apr-2016 18:34:14 UTC] PHP   3. Symfony\Component\HttpKernel\HttpKernel->handle() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2306
+[10-Apr-2016 18:34:14 UTC] PHP   4. Symfony\Component\HttpKernel\HttpKernel->handleRaw() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2955
+[10-Apr-2016 18:34:14 UTC] PHP   5. call_user_func_array:{/home/ubuntu/workspace/test/var/bootstrap.php.cache:2993}() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2993
+[10-Apr-2016 18:34:14 UTC] PHP   6. AppBundle\Controller\DefaultController->uploadFileAction() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2993
+[10-Apr-2016 18:34:14 UTC] PHP   7. AppBundle\Service\ManagerService->save() /home/ubuntu/workspace/test/src/AppBundle/Controller/DefaultController.php:63
+[10-Apr-2016 18:34:14 UTC] PHP   8. Manager\ManagerTypes\CsvManager->saveData() /home/ubuntu/workspace/test/src/AppBundle/Service/ManagerService.php:54
+[10-Apr-2016 18:34:14 UTC] PHP   9. fputcsv() /home/ubuntu/workspace/test/src/Manager/ManagerTypes/CsvManager.php:86
+[10-Apr-2016 18:34:14 UTC] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /home/ubuntu/workspace/test/src/Manager/ManagerTypes/CsvManager.php on line 88
+[10-Apr-2016 18:34:14 UTC] PHP Stack trace:
+[10-Apr-2016 18:34:14 UTC] PHP   1. {main}() /home/ubuntu/workspace/test/web/app.php:0
+[10-Apr-2016 18:34:14 UTC] PHP   2. Symfony\Component\HttpKernel\Kernel->handle() /home/ubuntu/workspace/test/web/app.php:28
+[10-Apr-2016 18:34:14 UTC] PHP   3. Symfony\Component\HttpKernel\HttpKernel->handle() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2306
+[10-Apr-2016 18:34:14 UTC] PHP   4. Symfony\Component\HttpKernel\HttpKernel->handleRaw() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2955
+[10-Apr-2016 18:34:14 UTC] PHP   5. call_user_func_array:{/home/ubuntu/workspace/test/var/bootstrap.php.cache:2993}() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2993
+[10-Apr-2016 18:34:14 UTC] PHP   6. AppBundle\Controller\DefaultController->uploadFileAction() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2993
+[10-Apr-2016 18:34:14 UTC] PHP   7. AppBundle\Service\ManagerService->save() /home/ubuntu/workspace/test/src/AppBundle/Controller/DefaultController.php:63
+[10-Apr-2016 18:34:14 UTC] PHP   8. Manager\ManagerTypes\CsvManager->saveData() /home/ubuntu/workspace/test/src/AppBundle/Service/ManagerService.php:54
+[10-Apr-2016 18:34:14 UTC] PHP   9. fclose() /home/ubuntu/workspace/test/src/Manager/ManagerTypes/CsvManager.php:88
+[10-Apr-2016 18:34:15 UTC] PHP Warning:  fopen(/home/ubuntu/workspace/test/src/Manager/ManagerTypes/csv/demo.csv): failed to open stream: Permission denied in /home/ubuntu/workspace/test/src/Manager/ManagerTypes/CsvManager.php on line 84
+[10-Apr-2016 18:34:15 UTC] PHP Stack trace:
+[10-Apr-2016 18:34:15 UTC] PHP   1. {main}() /home/ubuntu/workspace/test/web/app.php:0
+[10-Apr-2016 18:34:15 UTC] PHP   2. Symfony\Component\HttpKernel\Kernel->handle() /home/ubuntu/workspace/test/web/app.php:28
+[10-Apr-2016 18:34:15 UTC] PHP   3. Symfony\Component\HttpKernel\HttpKernel->handle() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2306
+[10-Apr-2016 18:34:15 UTC] PHP   4. Symfony\Component\HttpKernel\HttpKernel->handleRaw() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2955
+[10-Apr-2016 18:34:15 UTC] PHP   5. call_user_func_array:{/home/ubuntu/workspace/test/var/bootstrap.php.cache:2993}() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2993
+[10-Apr-2016 18:34:15 UTC] PHP   6. AppBundle\Controller\DefaultController->uploadFileAction() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2993
+[10-Apr-2016 18:34:15 UTC] PHP   7. AppBundle\Service\ManagerService->save() /home/ubuntu/workspace/test/src/AppBundle/Controller/DefaultController.php:63
+[10-Apr-2016 18:34:15 UTC] PHP   8. Manager\ManagerTypes\CsvManager->saveData() /home/ubuntu/workspace/test/src/AppBundle/Service/ManagerService.php:54
+[10-Apr-2016 18:34:15 UTC] PHP   9. fopen() /home/ubuntu/workspace/test/src/Manager/ManagerTypes/CsvManager.php:84
+[10-Apr-2016 18:34:15 UTC] PHP Warning:  fputcsv() expects parameter 1 to be resource, boolean given in /home/ubuntu/workspace/test/src/Manager/ManagerTypes/CsvManager.php on line 86
+[10-Apr-2016 18:34:15 UTC] PHP Stack trace:
+[10-Apr-2016 18:34:15 UTC] PHP   1. {main}() /home/ubuntu/workspace/test/web/app.php:0
+[10-Apr-2016 18:34:15 UTC] PHP   2. Symfony\Component\HttpKernel\Kernel->handle() /home/ubuntu/workspace/test/web/app.php:28
+[10-Apr-2016 18:34:15 UTC] PHP   3. Symfony\Component\HttpKernel\HttpKernel->handle() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2306
+[10-Apr-2016 18:34:15 UTC] PHP   4. Symfony\Component\HttpKernel\HttpKernel->handleRaw() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2955
+[10-Apr-2016 18:34:15 UTC] PHP   5. call_user_func_array:{/home/ubuntu/workspace/test/var/bootstrap.php.cache:2993}() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2993
+[10-Apr-2016 18:34:15 UTC] PHP   6. AppBundle\Controller\DefaultController->uploadFileAction() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2993
+[10-Apr-2016 18:34:15 UTC] PHP   7. AppBundle\Service\ManagerService->save() /home/ubuntu/workspace/test/src/AppBundle/Controller/DefaultController.php:63
+[10-Apr-2016 18:34:15 UTC] PHP   8. Manager\ManagerTypes\CsvManager->saveData() /home/ubuntu/workspace/test/src/AppBundle/Service/ManagerService.php:54
+[10-Apr-2016 18:34:15 UTC] PHP   9. fputcsv() /home/ubuntu/workspace/test/src/Manager/ManagerTypes/CsvManager.php:86
+[10-Apr-2016 18:34:15 UTC] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /home/ubuntu/workspace/test/src/Manager/ManagerTypes/CsvManager.php on line 88
+[10-Apr-2016 18:34:15 UTC] PHP Stack trace:
+[10-Apr-2016 18:34:15 UTC] PHP   1. {main}() /home/ubuntu/workspace/test/web/app.php:0
+[10-Apr-2016 18:34:15 UTC] PHP   2. Symfony\Component\HttpKernel\Kernel->handle() /home/ubuntu/workspace/test/web/app.php:28
+[10-Apr-2016 18:34:15 UTC] PHP   3. Symfony\Component\HttpKernel\HttpKernel->handle() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2306
+[10-Apr-2016 18:34:15 UTC] PHP   4. Symfony\Component\HttpKernel\HttpKernel->handleRaw() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2955
+[10-Apr-2016 18:34:15 UTC] PHP   5. call_user_func_array:{/home/ubuntu/workspace/test/var/bootstrap.php.cache:2993}() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2993
+[10-Apr-2016 18:34:15 UTC] PHP   6. AppBundle\Controller\DefaultController->uploadFileAction() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2993
+[10-Apr-2016 18:34:15 UTC] PHP   7. AppBundle\Service\ManagerService->save() /home/ubuntu/workspace/test/src/AppBundle/Controller/DefaultController.php:63
+[10-Apr-2016 18:34:15 UTC] PHP   8. Manager\ManagerTypes\CsvManager->saveData() /home/ubuntu/workspace/test/src/AppBundle/Service/ManagerService.php:54
+[10-Apr-2016 18:34:15 UTC] PHP   9. fclose() /home/ubuntu/workspace/test/src/Manager/ManagerTypes/CsvManager.php:88
+[10-Apr-2016 18:37:31 UTC] PHP Warning:  hash_file(): Filename cannot be empty in /home/ubuntu/workspace/test/src/AppBundle/Controller/DefaultController.php on line 59
+[10-Apr-2016 18:37:31 UTC] PHP Stack trace:
+[10-Apr-2016 18:37:31 UTC] PHP   1. {main}() /home/ubuntu/workspace/test/web/app.php:0
+[10-Apr-2016 18:37:31 UTC] PHP   2. Symfony\Component\HttpKernel\Kernel->handle() /home/ubuntu/workspace/test/web/app.php:28
+[10-Apr-2016 18:37:31 UTC] PHP   3. Symfony\Component\HttpKernel\HttpKernel->handle() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2306
+[10-Apr-2016 18:37:31 UTC] PHP   4. Symfony\Component\HttpKernel\HttpKernel->handleRaw() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2955
+[10-Apr-2016 18:37:31 UTC] PHP   5. call_user_func_array:{/home/ubuntu/workspace/test/var/bootstrap.php.cache:2993}() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2993
+[10-Apr-2016 18:37:31 UTC] PHP   6. AppBundle\Controller\DefaultController->uploadFileAction() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2993
+[10-Apr-2016 18:37:31 UTC] PHP   7. hash_file() /home/ubuntu/workspace/test/src/AppBundle/Controller/DefaultController.php:59
+[10-Apr-2016 18:41:47 UTC] PHP Warning:  fopen(/home/ubuntu/workspace/test/src/Manager/ManagerTypes/csv/demo.csv): failed to open stream: Permission denied in /home/ubuntu/workspace/test/src/Manager/ManagerTypes/CsvManager.php on line 85
+[10-Apr-2016 18:41:47 UTC] PHP Stack trace:
+[10-Apr-2016 18:41:47 UTC] PHP   1. {main}() /home/ubuntu/workspace/test/web/app.php:0
+[10-Apr-2016 18:41:47 UTC] PHP   2. Symfony\Component\HttpKernel\Kernel->handle() /home/ubuntu/workspace/test/web/app.php:28
+[10-Apr-2016 18:41:47 UTC] PHP   3. Symfony\Component\HttpKernel\HttpKernel->handle() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2306
+[10-Apr-2016 18:41:47 UTC] PHP   4. Symfony\Component\HttpKernel\HttpKernel->handleRaw() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2955
+[10-Apr-2016 18:41:47 UTC] PHP   5. call_user_func_array:{/home/ubuntu/workspace/test/var/bootstrap.php.cache:2993}() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2993
+[10-Apr-2016 18:41:47 UTC] PHP   6. AppBundle\Controller\DefaultController->uploadFileAction() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2993
+[10-Apr-2016 18:41:47 UTC] PHP   7. AppBundle\Service\ManagerService->save() /home/ubuntu/workspace/test/src/AppBundle/Controller/DefaultController.php:63
+[10-Apr-2016 18:41:47 UTC] PHP   8. Manager\ManagerTypes\CsvManager->saveData() /home/ubuntu/workspace/test/src/AppBundle/Service/ManagerService.php:54
+[10-Apr-2016 18:41:47 UTC] PHP   9. fopen() /home/ubuntu/workspace/test/src/Manager/ManagerTypes/CsvManager.php:85
+[10-Apr-2016 18:41:47 UTC] PHP Warning:  fputcsv() expects parameter 1 to be resource, boolean given in /home/ubuntu/workspace/test/src/Manager/ManagerTypes/CsvManager.php on line 87
+[10-Apr-2016 18:41:47 UTC] PHP Stack trace:
+[10-Apr-2016 18:41:47 UTC] PHP   1. {main}() /home/ubuntu/workspace/test/web/app.php:0
+[10-Apr-2016 18:41:47 UTC] PHP   2. Symfony\Component\HttpKernel\Kernel->handle() /home/ubuntu/workspace/test/web/app.php:28
+[10-Apr-2016 18:41:47 UTC] PHP   3. Symfony\Component\HttpKernel\HttpKernel->handle() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2306
+[10-Apr-2016 18:41:47 UTC] PHP   4. Symfony\Component\HttpKernel\HttpKernel->handleRaw() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2955
+[10-Apr-2016 18:41:47 UTC] PHP   5. call_user_func_array:{/home/ubuntu/workspace/test/var/bootstrap.php.cache:2993}() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2993
+[10-Apr-2016 18:41:47 UTC] PHP   6. AppBundle\Controller\DefaultController->uploadFileAction() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2993
+[10-Apr-2016 18:41:47 UTC] PHP   7. AppBundle\Service\ManagerService->save() /home/ubuntu/workspace/test/src/AppBundle/Controller/DefaultController.php:63
+[10-Apr-2016 18:41:47 UTC] PHP   8. Manager\ManagerTypes\CsvManager->saveData() /home/ubuntu/workspace/test/src/AppBundle/Service/ManagerService.php:54
+[10-Apr-2016 18:41:47 UTC] PHP   9. fputcsv() /home/ubuntu/workspace/test/src/Manager/ManagerTypes/CsvManager.php:87
+[10-Apr-2016 18:41:47 UTC] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /home/ubuntu/workspace/test/src/Manager/ManagerTypes/CsvManager.php on line 89
+[10-Apr-2016 18:41:47 UTC] PHP Stack trace:
+[10-Apr-2016 18:41:47 UTC] PHP   1. {main}() /home/ubuntu/workspace/test/web/app.php:0
+[10-Apr-2016 18:41:47 UTC] PHP   2. Symfony\Component\HttpKernel\Kernel->handle() /home/ubuntu/workspace/test/web/app.php:28
+[10-Apr-2016 18:41:47 UTC] PHP   3. Symfony\Component\HttpKernel\HttpKernel->handle() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2306
+[10-Apr-2016 18:41:47 UTC] PHP   4. Symfony\Component\HttpKernel\HttpKernel->handleRaw() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2955
+[10-Apr-2016 18:41:47 UTC] PHP   5. call_user_func_array:{/home/ubuntu/workspace/test/var/bootstrap.php.cache:2993}() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2993
+[10-Apr-2016 18:41:47 UTC] PHP   6. AppBundle\Controller\DefaultController->uploadFileAction() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2993
+[10-Apr-2016 18:41:47 UTC] PHP   7. AppBundle\Service\ManagerService->save() /home/ubuntu/workspace/test/src/AppBundle/Controller/DefaultController.php:63
+[10-Apr-2016 18:41:47 UTC] PHP   8. Manager\ManagerTypes\CsvManager->saveData() /home/ubuntu/workspace/test/src/AppBundle/Service/ManagerService.php:54
+[10-Apr-2016 18:41:47 UTC] PHP   9. fclose() /home/ubuntu/workspace/test/src/Manager/ManagerTypes/CsvManager.php:89
+[10-Apr-2016 18:43:21 UTC] PHP Warning:  fopen(/home/ubuntu/workspace/test/src/Manager/ManagerTypes/csv/demo.csv): failed to open stream: Permission denied in /home/ubuntu/workspace/test/src/Manager/ManagerTypes/CsvManager.php on line 86
+[10-Apr-2016 18:43:21 UTC] PHP Stack trace:
+[10-Apr-2016 18:43:21 UTC] PHP   1. {main}() /home/ubuntu/workspace/test/web/app.php:0
+[10-Apr-2016 18:43:21 UTC] PHP   2. Symfony\Component\HttpKernel\Kernel->handle() /home/ubuntu/workspace/test/web/app.php:28
+[10-Apr-2016 18:43:21 UTC] PHP   3. Symfony\Component\HttpKernel\HttpKernel->handle() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2306
+[10-Apr-2016 18:43:21 UTC] PHP   4. Symfony\Component\HttpKernel\HttpKernel->handleRaw() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2955
+[10-Apr-2016 18:43:21 UTC] PHP   5. call_user_func_array:{/home/ubuntu/workspace/test/var/bootstrap.php.cache:2993}() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2993
+[10-Apr-2016 18:43:21 UTC] PHP   6. AppBundle\Controller\DefaultController->uploadFileAction() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2993
+[10-Apr-2016 18:43:21 UTC] PHP   7. AppBundle\Service\ManagerService->save() /home/ubuntu/workspace/test/src/AppBundle/Controller/DefaultController.php:63
+[10-Apr-2016 18:43:21 UTC] PHP   8. Manager\ManagerTypes\CsvManager->saveData() /home/ubuntu/workspace/test/src/AppBundle/Service/ManagerService.php:54
+[10-Apr-2016 18:43:21 UTC] PHP   9. fopen() /home/ubuntu/workspace/test/src/Manager/ManagerTypes/CsvManager.php:86
+[10-Apr-2016 18:43:21 UTC] PHP Warning:  fputcsv() expects parameter 1 to be resource, boolean given in /home/ubuntu/workspace/test/src/Manager/ManagerTypes/CsvManager.php on line 88
+[10-Apr-2016 18:43:21 UTC] PHP Stack trace:
+[10-Apr-2016 18:43:21 UTC] PHP   1. {main}() /home/ubuntu/workspace/test/web/app.php:0
+[10-Apr-2016 18:43:21 UTC] PHP   2. Symfony\Component\HttpKernel\Kernel->handle() /home/ubuntu/workspace/test/web/app.php:28
+[10-Apr-2016 18:43:21 UTC] PHP   3. Symfony\Component\HttpKernel\HttpKernel->handle() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2306
+[10-Apr-2016 18:43:21 UTC] PHP   4. Symfony\Component\HttpKernel\HttpKernel->handleRaw() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2955
+[10-Apr-2016 18:43:21 UTC] PHP   5. call_user_func_array:{/home/ubuntu/workspace/test/var/bootstrap.php.cache:2993}() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2993
+[10-Apr-2016 18:43:21 UTC] PHP   6. AppBundle\Controller\DefaultController->uploadFileAction() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2993
+[10-Apr-2016 18:43:21 UTC] PHP   7. AppBundle\Service\ManagerService->save() /home/ubuntu/workspace/test/src/AppBundle/Controller/DefaultController.php:63
+[10-Apr-2016 18:43:21 UTC] PHP   8. Manager\ManagerTypes\CsvManager->saveData() /home/ubuntu/workspace/test/src/AppBundle/Service/ManagerService.php:54
+[10-Apr-2016 18:43:21 UTC] PHP   9. fputcsv() /home/ubuntu/workspace/test/src/Manager/ManagerTypes/CsvManager.php:88
+[10-Apr-2016 18:43:21 UTC] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /home/ubuntu/workspace/test/src/Manager/ManagerTypes/CsvManager.php on line 90
+[10-Apr-2016 18:43:21 UTC] PHP Stack trace:
+[10-Apr-2016 18:43:21 UTC] PHP   1. {main}() /home/ubuntu/workspace/test/web/app.php:0
+[10-Apr-2016 18:43:21 UTC] PHP   2. Symfony\Component\HttpKernel\Kernel->handle() /home/ubuntu/workspace/test/web/app.php:28
+[10-Apr-2016 18:43:21 UTC] PHP   3. Symfony\Component\HttpKernel\HttpKernel->handle() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2306
+[10-Apr-2016 18:43:21 UTC] PHP   4. Symfony\Component\HttpKernel\HttpKernel->handleRaw() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2955
+[10-Apr-2016 18:43:21 UTC] PHP   5. call_user_func_array:{/home/ubuntu/workspace/test/var/bootstrap.php.cache:2993}() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2993
+[10-Apr-2016 18:43:21 UTC] PHP   6. AppBundle\Controller\DefaultController->uploadFileAction() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2993
+[10-Apr-2016 18:43:21 UTC] PHP   7. AppBundle\Service\ManagerService->save() /home/ubuntu/workspace/test/src/AppBundle/Controller/DefaultController.php:63
+[10-Apr-2016 18:43:21 UTC] PHP   8. Manager\ManagerTypes\CsvManager->saveData() /home/ubuntu/workspace/test/src/AppBundle/Service/ManagerService.php:54
+[10-Apr-2016 18:43:21 UTC] PHP   9. fclose() /home/ubuntu/workspace/test/src/Manager/ManagerTypes/CsvManager.php:90
+[10-Apr-2016 18:48:52 UTC] PHP Warning:  fopen(/home/ubuntu/workspace/test/src/Manager/ManagerTypes/csv/demo.csv): failed to open stream: Permission denied in /home/ubuntu/workspace/test/src/Manager/ManagerTypes/CsvManager.php on line 88
+[10-Apr-2016 18:48:52 UTC] PHP Stack trace:
+[10-Apr-2016 18:48:52 UTC] PHP   1. {main}() /home/ubuntu/workspace/test/web/app.php:0
+[10-Apr-2016 18:48:52 UTC] PHP   2. Symfony\Component\HttpKernel\Kernel->handle() /home/ubuntu/workspace/test/web/app.php:28
+[10-Apr-2016 18:48:52 UTC] PHP   3. Symfony\Component\HttpKernel\HttpKernel->handle() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2306
+[10-Apr-2016 18:48:52 UTC] PHP   4. Symfony\Component\HttpKernel\HttpKernel->handleRaw() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2955
+[10-Apr-2016 18:48:52 UTC] PHP   5. call_user_func_array:{/home/ubuntu/workspace/test/var/bootstrap.php.cache:2993}() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2993
+[10-Apr-2016 18:48:52 UTC] PHP   6. AppBundle\Controller\DefaultController->uploadFileAction() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2993
+[10-Apr-2016 18:48:52 UTC] PHP   7. AppBundle\Service\ManagerService->save() /home/ubuntu/workspace/test/src/AppBundle/Controller/DefaultController.php:63
+[10-Apr-2016 18:48:52 UTC] PHP   8. Manager\ManagerTypes\CsvManager->saveData() /home/ubuntu/workspace/test/src/AppBundle/Service/ManagerService.php:54
+[10-Apr-2016 18:48:52 UTC] PHP   9. fopen() /home/ubuntu/workspace/test/src/Manager/ManagerTypes/CsvManager.php:88
+[10-Apr-2016 18:48:52 UTC] PHP Warning:  fputcsv() expects parameter 1 to be resource, boolean given in /home/ubuntu/workspace/test/src/Manager/ManagerTypes/CsvManager.php on line 90
+[10-Apr-2016 18:48:52 UTC] PHP Stack trace:
+[10-Apr-2016 18:48:52 UTC] PHP   1. {main}() /home/ubuntu/workspace/test/web/app.php:0
+[10-Apr-2016 18:48:52 UTC] PHP   2. Symfony\Component\HttpKernel\Kernel->handle() /home/ubuntu/workspace/test/web/app.php:28
+[10-Apr-2016 18:48:52 UTC] PHP   3. Symfony\Component\HttpKernel\HttpKernel->handle() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2306
+[10-Apr-2016 18:48:52 UTC] PHP   4. Symfony\Component\HttpKernel\HttpKernel->handleRaw() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2955
+[10-Apr-2016 18:48:52 UTC] PHP   5. call_user_func_array:{/home/ubuntu/workspace/test/var/bootstrap.php.cache:2993}() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2993
+[10-Apr-2016 18:48:52 UTC] PHP   6. AppBundle\Controller\DefaultController->uploadFileAction() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2993
+[10-Apr-2016 18:48:52 UTC] PHP   7. AppBundle\Service\ManagerService->save() /home/ubuntu/workspace/test/src/AppBundle/Controller/DefaultController.php:63
+[10-Apr-2016 18:48:52 UTC] PHP   8. Manager\ManagerTypes\CsvManager->saveData() /home/ubuntu/workspace/test/src/AppBundle/Service/ManagerService.php:54
+[10-Apr-2016 18:48:52 UTC] PHP   9. fputcsv() /home/ubuntu/workspace/test/src/Manager/ManagerTypes/CsvManager.php:90
+[10-Apr-2016 18:48:52 UTC] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /home/ubuntu/workspace/test/src/Manager/ManagerTypes/CsvManager.php on line 92
+[10-Apr-2016 18:48:52 UTC] PHP Stack trace:
+[10-Apr-2016 18:48:52 UTC] PHP   1. {main}() /home/ubuntu/workspace/test/web/app.php:0
+[10-Apr-2016 18:48:52 UTC] PHP   2. Symfony\Component\HttpKernel\Kernel->handle() /home/ubuntu/workspace/test/web/app.php:28
+[10-Apr-2016 18:48:52 UTC] PHP   3. Symfony\Component\HttpKernel\HttpKernel->handle() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2306
+[10-Apr-2016 18:48:52 UTC] PHP   4. Symfony\Component\HttpKernel\HttpKernel->handleRaw() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2955
+[10-Apr-2016 18:48:52 UTC] PHP   5. call_user_func_array:{/home/ubuntu/workspace/test/var/bootstrap.php.cache:2993}() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2993
+[10-Apr-2016 18:48:52 UTC] PHP   6. AppBundle\Controller\DefaultController->uploadFileAction() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2993
+[10-Apr-2016 18:48:52 UTC] PHP   7. AppBundle\Service\ManagerService->save() /home/ubuntu/workspace/test/src/AppBundle/Controller/DefaultController.php:63
+[10-Apr-2016 18:48:52 UTC] PHP   8. Manager\ManagerTypes\CsvManager->saveData() /home/ubuntu/workspace/test/src/AppBundle/Service/ManagerService.php:54
+[10-Apr-2016 18:48:52 UTC] PHP   9. fclose() /home/ubuntu/workspace/test/src/Manager/ManagerTypes/CsvManager.php:92
+[10-Apr-2016 19:09:09 UTC] PHP Warning:  hash_file(): Filename cannot be empty in /home/ubuntu/workspace/test/src/AppBundle/Controller/DefaultController.php on line 59
+[10-Apr-2016 19:09:09 UTC] PHP Stack trace:
+[10-Apr-2016 19:09:09 UTC] PHP   1. {main}() /home/ubuntu/workspace/test/web/app.php:0
+[10-Apr-2016 19:09:09 UTC] PHP   2. Symfony\Component\HttpKernel\Kernel->handle() /home/ubuntu/workspace/test/web/app.php:28
+[10-Apr-2016 19:09:09 UTC] PHP   3. Symfony\Component\HttpKernel\HttpKernel->handle() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2306
+[10-Apr-2016 19:09:09 UTC] PHP   4. Symfony\Component\HttpKernel\HttpKernel->handleRaw() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2955
+[10-Apr-2016 19:09:09 UTC] PHP   5. call_user_func_array:{/home/ubuntu/workspace/test/var/bootstrap.php.cache:2993}() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2993
+[10-Apr-2016 19:09:09 UTC] PHP   6. AppBundle\Controller\DefaultController->uploadFileAction() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2993
+[10-Apr-2016 19:09:09 UTC] PHP   7. hash_file() /home/ubuntu/workspace/test/src/AppBundle/Controller/DefaultController.php:59

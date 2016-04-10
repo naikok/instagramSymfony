@@ -66,6 +66,4 @@ class CsvManagerTest extends \PHPUnit_Framework_TestCase
         $this->assertNotEmpty($result);
         $this->assertTrue($countItems > 0);
     }
-    
-
 }
