@@ -59,11 +59,13 @@ class CsvManagerTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue($fileLength > 0);
     }
     
-    public function testReadData()
+    public function readData()
     {
         $result = $this->csvManager->readData();
         $countItems = count($result);
         $this->assertNotEmpty($result);
         $this->assertTrue($countItems > 0);
     }
+    
+
 }
