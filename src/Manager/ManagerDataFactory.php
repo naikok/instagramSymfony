@@ -13,7 +13,7 @@ class ManagerDataFactory
 {
     /**
      * @param $type
-     * @return CsvManager | MysqlManager | null
+     * @return CsvManager
      * @throws ManagerException
      */
      

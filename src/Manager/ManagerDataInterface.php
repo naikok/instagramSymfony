@@ -9,9 +9,8 @@ namespace Manager;
 interface ManagerDataInterface
 {
     /**
-     * @param mixed $data
+     * @param array $data
      */
-     
     public function saveData($data);
     public function readData();
     public function exportData();

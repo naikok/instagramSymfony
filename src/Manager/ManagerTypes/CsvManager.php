@@ -69,9 +69,9 @@ class CsvManager implements ManagerDataInterface {
     }
     
     /**
-     * it returns the content into a string of the file created
+     * it returns the nextId to be inserted on the csv file
      * @throws Exception when error is found
-     * @return string 
+     * @return int 
      */
      
     public function getLastIdInserted() 
