@@ -7,8 +7,8 @@
            <header class="_5axto" align="center">
               <img src="https://instagram-robotm82.c9users.io/test/web/images/instagramlogo.png"/>
            </header>
-           <header class="_5axto" align="right">
-              <a href="https://instagram-robotm82.c9users.io/test/web/exportCsvFile">Export as CSV file</a>
+           <header class="_5axto" style="text-align:right">
+              <a href="https://instagram-robotm82.c9users.io/test/web/exportCsvFile" style="color:#bcbcbc; font-size:11px; font-weight:700; font-size:12px">Export Data as CSV file</a>
            </header>
 
             <div id="status">
@@ -158,99 +158,5 @@
     }
 </style>
 {% endblock %}
-{% block javascripts %}
-<script type="text/javascript">
-    function submitform() 
-    {
-          Uploader.uploadFile('photo');
-    }
-    
-    function resetForm() 
-    {
-        jQuery("#formPostImage")[0].reset();
-    }
-   
-    function getPosts()
-    {
-        jQuery.ajax({
-            url: document.location.href + 'readData',
-            type: 'post',
-            success: function(response) { 
-                var resultPosts = response.message;
-                jQuery(".automatic").empty();
-                jQuery.each(resultPosts,function (key, value) {
-                    var imageName = value[3];
-                    var imgSrc=document.location.href + 'images/' + imageName ;
-                    if (value[0] != 'id' ) {
-                        var item='<div id="next" style="padding-top:20px;margin-bottom:20px"><div class="_22yr2 _e0mru" ><div class="titleImage" align="center">'+value[1]+'</div><div class="_jjzlb" align="center"><img src="'+ imgSrc +'"/></div></div></div>';
-                            jQuery(".automatic").append(item);
-                    }
-                });
-        },
-        error: function(){
-            console.log('error reading csv file');
-        }
-        });
-    }
 
 
-class Uploader {
-
-    static uploadFile (id) {
-        var title = document.getElementById('title-photo').value;
-        console.log(title);
-        var file = document.getElementById(id).files[0];
-        
-        if (file) {
-            var fileSize = 0;
-            if (file.size > 1024 * 1024) {
-                fileSize = (Math.round(file.size * 100 / (1024 * 1024)) / 100).toString() + 'MB';
-            } else {
-                fileSize = (Math.round(file.size * 100 / 1024) / 100).toString() + 'KB';
-            }
-            console.log('Name: ' + file.name);
-            var extension = file.name.split('.').pop();
-            console.log("extension");
-            console.log(extension);
-            console.log('Size: ' + fileSize);
-            console.log('Type: ' + file.type);
-        }
-        var data = new FormData();
-        data.append(id, file);
-        data.append('title-photo', title);   
-        if (this.isValidExtension(extension)) {
-            console.log("is valid Extension");
-            var url = document.location.href + 'uploadFile';
-            console.log(url);
-            $.ajax({
-                    url: url,
-                    type: "POST",
-                    data: data,
-                    processData: false,
-                    contentType: false,
-                    success: function(response) {
-                        if (response.success == 1) {
-                            resetForm();
-                            getPosts();
-                        } else {
-                            alert (response.message);
-                        }
-                    }, 
-                    error:function(){
-                        alert("error");
-                    }
-            });
-        } else {
-            alert("Extension not valid");
-        }
-    }
-
-    static isValidExtension(value) {
-        let validExtensions = ["png", "jpg", "jpeg", "gif"];
-        return validExtensions.indexOf(value) > - 1;
-    }
-}
-
-    
-</script>
-{% endblock %}

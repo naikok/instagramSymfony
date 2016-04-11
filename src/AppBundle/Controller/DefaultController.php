@@ -55,7 +55,7 @@ class DefaultController extends Controller
         $filename = basename($_FILES['photo']['name']);
         $uploadDir = realpath($this->getParameter('kernel.root_dir').'/..') . '/web/images/';
         if (!empty($filename)) {
-            $extension = pathinfo($_FILES['photo']['name'], PATHINFO_EXTENSION);
+            $extension = strtolower(pathinfo($_FILES['photo']['name'], PATHINFO_EXTENSION));
             $filename = hash_file('md5', $_FILES['photo']['tmp_name']) . '.' . $extension;
             $uploadedFile = $uploadDir . $filename;
             if (move_uploaded_file($_FILES['photo']['tmp_name'], $uploadedFile)) {   

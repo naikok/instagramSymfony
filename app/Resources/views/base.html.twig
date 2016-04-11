@@ -5,10 +5,108 @@
         <title>{% block title %}Welcome hola!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script type="text/javascript">
+                function submitform() 
+                {
+                      Uploader.uploadFile('photo');
+                }
+                
+                function resetForm() 
+                {
+                    jQuery("#formPostImage")[0].reset();
+                }
+               
+                function getPosts()
+                {
+                    jQuery.ajax({
+                        url: document.location.href + 'readData',
+                        type: 'post',
+                        success: function(response) { 
+                            var resultPosts = response.message;
+                            jQuery(".automatic").empty();
+                            jQuery.each(resultPosts,function (key, value) {
+                                var imageName = value[3];
+                                var imgSrc=document.location.href + 'images/' + imageName ;
+                                if (value[0] != 'id' ) {
+                                    var item='<div id="next" style="padding-top:20px;margin-bottom:20px"><div class="_22yr2 _e0mru" ><div class="titleImage" align="center">'+value[1]+'</div><div class="_jjzlb" align="center"><img src="'+ imgSrc +'"/></div></div></div>';
+                                        jQuery(".automatic").append(item);
+                                }
+                            });
+                        },
+                        error: function(){
+                            console.log('error reading csv file for getting the posts');
+                        }
+                    });
+                }
+            
+            
+            var Uploader = {
+                uploadFile: function(id) 
+                {
+                    var title = document.getElementById('title-photo').value;
+                    console.log(title);
+                    var file = document.getElementById(id).files[0];
+                    
+                    if (file) {
+                      
+                        var fileSize = (Math.round(file.size * 100 / 1024) / 100);
+                        
+                        console.log('Name: ' + file.name);
+                        var extension = file.name.split('.').pop().toLowerCase();
+                        console.log("extension");
+                        console.log(extension);
+                        console.log('Size: ' + fileSize +'KB');
+                        console.log('Type: ' + file.type);
+                    }
+                    var data = new FormData();
+                    data.append(id, file);
+                    data.append('title-photo', title);   
+                    if (this.isValidExtension(extension)) {
+                        if(this.isValidFileSize(fileSize)) {
+                            var url = document.location.href + 'uploadFile';
+                            $.ajax({
+                                    url: url,
+                                    type: "POST",
+                                    data: data,
+                                    processData: false,
+                                    contentType: false,
+                                    success: function(response) {
+                                        if (response.success == 1) {
+                                            resetForm();
+                                            getPosts();
+                                        } else {
+                                            alert(response.message);
+                                        }
+                                    }, 
+                                    error:function(){
+                                        console.log("error calling to controller");
+                                    }
+                            });
+                        } else {
+                           alert("Filesize of image bigger than 2MB");
+                        }
+                    } else {
+                        alert("Extension not valid for image");
+                    }
+                },
+                isValidExtension:function (value) 
+                {
+                    var validExtensions = ["png", "jpg", "jpeg", "gif"];
+                    return validExtensions.indexOf(value) > - 1;
+                },
+                isValidFileSize:function(fileSize)
+                {
+                    if (fileSize <= 2048) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                }
+            }
+        </script>
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body onload="getPosts();">
         {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
     </body>
 </html>

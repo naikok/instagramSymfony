@@ -72,7 +72,7 @@ class ManagerService
         try {
             return $this->manager->readData();
         } catch (Exception $e) {
-           return $e->getMessage();  
+           trigger_error("error reading file"); 
         }
     }
     

@@ -26,23 +26,38 @@ class CsvManager implements ManagerDataInterface {
         $this->filepath = __DIR__ . '/csv/' . $this->filename;
     }
 
-    public static function getInstance() {
-      if (!self::$instance instanceof self) {
-         self::$instance = new self;
-      }
-      return self::$instance;
+    /**
+     * it creates an instance of this class if it was not already instancied
+     * @return object 
+     */
+     
+    public static function getInstance() 
+    {
+        if (!self::$instance instanceof self) 
+            self::$instance = new self;
+        
+        return self::$instance;
     }
     
+    /**
+     * it gets the current class name of this object
+     * @return string 
+     */
+     
     public function getClass()
     {
         return get_called_class();
     }
-   
+    
+    /**
+     * it returns the content into a string of the file created
+     * @throws Exception when error is found
+     * @return string 
+     */
+     
     public function initCsv() 
     {    
        try {
-           
-           
             $file = fopen($this->filepath, 'w');
             fputcsv($file, $this->columns); // save the columns headers
             fclose($file);
@@ -53,6 +68,12 @@ class CsvManager implements ManagerDataInterface {
         }
     }
     
+    /**
+     * it returns the content into a string of the file created
+     * @throws Exception when error is found
+     * @return string 
+     */
+     
     public function getLastIdInserted() 
     {
         if (!file_exists($this->filepath)) 
@@ -64,18 +85,34 @@ class CsvManager implements ManagerDataInterface {
         return ( $lastId > 0)  ? $lastId + 1 : 1;
     }
     
+    /**
+     * it returns if the file was deleted or not
+     * @throws Exception when error is found
+     * @return bool 
+     */
     public function deleteCsv()
     {
         if (file_exists($this->filepath)) {
-            unlink($this->filepath);
-            return true;
+            try {
+                 unlink($this->filepath);
+                 return true;
+            } catch (Exception $e) {
+                throw new ManagerException("Error deleting csv file from the system", ExceptionCode::OPERATION_FAILED);
+            }
         } else {
             return false;
         }
     }
-   
-    public function saveData($data) {
-
+    
+    /**
+     * it returns an array with the data inserted
+     * @param $data array it contains the associative array data to be saved
+     * @throws Exception when error is found
+     * @return array 
+     */
+     
+    public function saveData($data) 
+    {
         if (!file_exists($this->filepath)) 
             $this->initCsv();
             
@@ -90,19 +127,25 @@ class CsvManager implements ManagerDataInterface {
                         fputcsv($file, $field);   
                     }  
                     fclose($file);
+                    return $data;
                 }catch (Exception $e) {
                     throw new ManagerException('Operation Failed when saving data', ExceptionCodes::OPERATION_FAILED);
                 }
-                return $data;
             } else {
                 throw new ManagerException('Data not provided to be saved into the csv file', ExceptionCodes::BAD_REQUEST);
             }
         } catch (Exception $e) {
             throw new ManagerException('Data could not be saved properly into the csv file', ExceptionCodes::OPERATION_FAILED); 
         }   
-   }
+    }
    
- 
+     
+    /**
+     * it returns an array with the results ordered by id desc
+     * @throws Exception when error is found
+     * @return array
+     */
+     
     public function readData() 
     {       
         $results = [];
@@ -118,8 +161,14 @@ class CsvManager implements ManagerDataInterface {
         } catch (Exception $e) {
             throw new ManagerException('Csv file could not be read as expected', ExceptionCodes::OPERATION_FAILED);
         }
-    }     
-   
+    }
+    
+    /**
+     * it returns a csv file binary file to be downloaded
+     * @throws Exception when error is found
+     * @return mixed 
+     */
+     
     public function exportData()
     { 
         $response = new Response();

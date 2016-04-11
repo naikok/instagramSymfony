@@ -18,6 +18,5 @@ class DefaultControllerTest extends WebTestCase
         $this->assertTrue(is_string($client->getResponse()->getContent()));
         $fileLength = strlen($client->getResponse()->getContent());
         $this->assertTrue($fileLength > 0);
-        
     }
 }

@@ -345,3 +345,11 @@ Stack trace:
 [10-Apr-2016 19:09:09 UTC] PHP   5. call_user_func_array:{/home/ubuntu/workspace/test/var/bootstrap.php.cache:2993}() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2993
 [10-Apr-2016 19:09:09 UTC] PHP   6. AppBundle\Controller\DefaultController->uploadFileAction() /home/ubuntu/workspace/test/var/bootstrap.php.cache:2993
 [10-Apr-2016 19:09:09 UTC] PHP   7. hash_file() /home/ubuntu/workspace/test/src/AppBundle/Controller/DefaultController.php:59
+[11-Apr-2016 09:01:57 UTC] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'The directory "/home/ubuntu/workspace/test/var/cache/prod/annotations" is not writable.' in /home/ubuntu/workspace/test/vendor/doctrine/cache/lib/Doctrine/Common/Cache/FileCache.php:92
+Stack trace:
+#0 /home/ubuntu/workspace/test/vendor/doctrine/cache/lib/Doctrine/Common/Cache/FilesystemCache.php(37): Doctrine\Common\Cache\FileCache->__construct('/home/ubuntu/wo...', '.doctrinecache....', 2)
+#1 /home/ubuntu/workspace/test/var/cache/prod/appProdProjectContainer.php(252): Doctrine\Common\Cache\FilesystemCache->__construct('/home/ubuntu/wo...')
+#2 /home/ubuntu/workspace/test/var/bootstrap.php.cache(2107): appProdProjectContainer->getAnnotationReaderService()
+#3 /home/ubuntu/workspace/test/var/cache/prod/appProdProjectContainer.php(1763): Symfony\Component\DependencyInjection\Container->get('annotation_read...')
+#4 /home/ubuntu/workspace/test/var/bootstrap.php.cache(2107): appProdProjectContainer->getSensioFrameworkExtra_Controller_ListenerService()
+#5 /h in /home/ubuntu/workspace/test/vendor/doctrine/cache/lib/Doctrine/Common/Cache/FileCache.php on line 92
